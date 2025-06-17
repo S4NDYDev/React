@@ -1,0 +1,44 @@
+@import './variables.css';
+
+/* Header */
+.header {
+  /*padding: 0.5rem 2rem;*/
+  /*temporalbackground-color:rgb(238, 49, 43);*/
+  /*background-image: url('/public/assets/vect.png');*/
+  background-size: 100%;
+  display: flex;
+  background-color: rgb(75, 197, 177);
+  justify-content: space-between;
+  align-items: flex-start;
+
+ }
+.header_text{/*
+  background-color:rgb(241, 74, 74);
+*/}
+.header__title {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-family: 'Merriweather Sans', sans-serif;
+  padding: 10px;
+}
+.header__subtitle {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+.header__slogan {
+  color: #7D7D7D;
+  font-size: .9rem;
+  font-family: var(--secondary-font);
+  line-height: 21px;
+  font-weight: 400;
+}
+.header_logo{
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  margin-right: 20px;
+
+}
+.logo_container{
+  }

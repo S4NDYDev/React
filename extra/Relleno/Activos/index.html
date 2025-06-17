@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&family=Open+Sans&family=Roboto:wght@400;500&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Administración Escolar</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Facultad CITEC</h1>
+        <p class="header__slogan">Unidos por la excelencia académica y ética</p>
+    </header>
+    <nav class="navbar">
+        <ul class="navbar-menu">
+            <li><a class="navbar__link"  href="..\..\index.html">Inicio</a></li>
+            <li><a class="navbar__link navbar__link--active" href="#">Activos</a></li>
+            <li><a class="navbar__link" href="..\Areas y Responsables\index.html">Areas y Responsables </a></li>
+            <li><a class="navbar__link" href="#">Generar Listados</a></li>
+            <li><a class="navbar__link" href="#">Accesso</a></li>
+            <li><a class="navbar__link" href="#">Contacto</a></li>
+        </ul>
+    </nav>
+    <main class="main">
+        
+        <div class="slider">
+            <!--<div class = "slide fade">
+                <img src = "assets/primaria.jpg" class="slide__img">
+            </div>
+            <div class = "slide fade">
+                <img src = "assets/primaria_1.jpg" class="slide__img">
+            </div>
+            <div class = "slide fade">
+                <img src = "assets/primaria_2.jpg" class="slide__img">
+            </div>
+                -->
+            <div class="form_1">
+                <h2>Actualización de Estado de Activos</h2>
+
+                <form id="assetForm">
+                  <label for="assetId">ID del Activo:</label>
+                  <input type="text" id="assetId" name="assetId" required><br><br>
+              
+                  <label for="assetName">Nombre del Activo:</label>
+                  <input type="text" id="assetName" name="assetName" readonly><br><br>
+              
+                  <label for="assetStatus">Estado del Activo:</label>
+                  <select id="assetStatus" name="assetStatus" required>
+                    <option value="Operativo">Operativo</option>
+                    <option value="Mantenimiento">Mantenimiento</option>
+                    <option value="Fuera de Servicio">Fuera de Servicio</option>
+                    <option value="Otro">Otro</option>
+                  </select><br><br>
+              
+                  <label for="comments">Comentarios:</label><br>
+                  <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+              
+                  <button type="submit">Actualizar Estado</button>
+                </form>    
+            </div>
+            
+            <div class="form_2">
+                <h2>Registro de Nuevos Activos</h2>
+                <form id="registroActivo">
+                  <label for="nombre">Nombre del Activo:</label>
+                  <input type="text" id="nombre" name="nombre" required><br><br>
+              
+                  <label for="descripcion">Descripcion:</label>
+                  <textarea id="descripcion" name="descripcion" required></textarea><br><br>
+              
+                  <label for="responsable">Responsable de Area:</label>
+                  <input type="text" id="responsable" name="responsable" required><br><br>
+              
+                  <label for="ubicacion">Ubicacion:</label>
+                  <input type="text" id="ubicacion" name="ubicacion" required><br><br>
+              
+                  <label for="estado">Estado:</label>
+                  <select id="estado" name="estado">
+                    <option value="Nuevo">Nuevo</option>
+                    <option value="En Uso">En Uso</option>
+                    <option value="Reparación">En Reparación</option>
+                    <option value="Fuera de Servicio">Fuera de Servicio</option>
+                  </select><br><br>
+              
+                  <input type="submit" value="Registrar Activo">
+                </form>
+            </div>
+       
+        </div>
+        
+        <!--<label class = "subtitle"></label>-->
+
+    </main>
+    <script type = "text/javascript" src="js/main.js"></script>
+</body>
+</html>

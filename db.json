@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Administrador",
+      "email": "admin@citec.edu",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Roberto Méndez",
+      "email": "r.mendez@citec.edu",
+      "password": "password123",
+      "role": "director"
+    },
+    {
+      "id": 3,
+      "name": "María González",
+      "email": "m.gonzalez@citec.edu",
+      "password": "password123",
+      "role": "admin_finance"
+    }
+  ],
+  "profiles": [
+    {
+      "id": 1,
+      "userId": 1,
+      "department": "Dirección General",
+      "phone": "(123) 456-7890"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "department": "Dirección Académica",
+      "phone": "(123) 456-7890 ext. 101"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "department": "Administración y Finanzas",
+      "phone": "(123) 456-7890 ext. 202"
+    }
+  ]
+}

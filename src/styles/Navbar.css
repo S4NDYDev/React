@@ -1,0 +1,107 @@
+@import './variables.css';
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.navbar::after {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: var(--secondary-color);
+}
+
+.navbar-menu {
+  display: flex;
+  padding-left: 4rem;
+  list-style-type: none;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar__link {
+  font-family: var(--secondary-font);
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: .8rem 2rem;
+  border-left: 1px solid white;
+  transition: .3s all ease-in-out;
+  /*font-size: 30px;*/
+  
+}
+
+.navbar__link:hover {
+  background-color: var(--secondary-color);
+}
+
+.navbar__link--active {
+  background-color: var(--secondary-color);
+}
+
+/* User info and logout button */
+.navbar__user-info {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding: 0 1rem;
+}
+
+.navbar__username {
+  color: white;
+  font-family: var(--secondary-font);
+  font-size: 20px;
+  padding: 0.5rem 1rem;
+}
+
+.navbar__logout-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-family: var(--secondary-font);
+  font-size: 0.9rem;
+  padding: .8rem 2rem;
+  cursor: pointer;
+  border-left: 1px solid white;
+  transition: .3s all ease-in-out;
+}
+
+.navbar__logout-btn:hover {
+  background-color: #b83018;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-menu {
+    padding-left: 0;
+    justify-content: center;
+  }
+  
+  .navbar__link,
+  .navbar__logout-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .navbar__user-info {
+    margin-left: 0;
+    padding: 0;
+  }
+  
+  .navbar__username {
+    padding: 0.5rem;
+  }
+}/*
+li{
+  width: 16%;
+  justify-content: space-around;
+}
+ul{
+  justify-content: space-between ;
+}*/
