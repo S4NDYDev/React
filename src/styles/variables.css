@@ -1,0 +1,19 @@
+:root {
+  /* Global variables */
+  --primary-color: #000000;
+  --secondary-color: #f4ce24;
+  --header-color: #b83018;
+  --primary-font: 'Roboto', sans-serif;
+  --secondary-font: 'Open Sans', sans-serif;
+}
+
+/* Reset properties */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--primary-font);
+}
