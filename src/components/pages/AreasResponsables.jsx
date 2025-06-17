@@ -1,10 +1,10 @@
+import React, { useState, useEffect } from "react";
 import "../../styles/Medicamentos.css";
-import { useGetMedicamentos } from "../../hooks/useGetMedicamentos";
-import MedicamentoCard from "../ui/medicamento-card";
 
 const Medicamentos = () => {
-  const { result, loading, error } = useGetMedicamentos();
-  console.log(result);
+  const [medicamentos, setMedicamentos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   return (
     <div className="medicamentos-container">
@@ -17,18 +17,26 @@ const Medicamentos = () => {
           {error && <p className="error-message">{error}</p>}
 
           <div className="medicamentos-list">
-            {!loading &&
-              Array.isArray(result) &&
-              result.map((medicamento) => (
-                <MedicamentoCard
-                  key={medicamento.id}
-                  nombre={medicamento.nombre}
-                  descripcion={medicamento.descripcion}
-                  fecha_vencimiento={medicamento.fecha_vencimiento}
-                  cantidad={medicamento.cantidad}
-                  img_url={medicamento.img_url}
+            {medicamentos.map((medicamento) => (
+              <div className="medicamento-card" key={medicamento.id}>
+                <img
+                  className="medicamento-imagen"
+                  src={medicamento.imagen_url}
+                  alt={medicamento.nombre}
                 />
-              ))}
+                <h3>{medicamento.nombre}</h3>
+                <p>
+                  <strong>Descripción:</strong> {medicamento.descripcion}
+                </p>
+                <p>
+                  <strong>Vencimiento:</strong>{" "}
+                  {new Date(medicamento.fecha_vencimiento).toLocaleDateString()}
+                </p>
+                <p>
+                  <strong>Cantidad:</strong> {medicamento.cantidad}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
