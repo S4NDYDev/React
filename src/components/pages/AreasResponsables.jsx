@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useGetMedicamentos } from "../../hooks/useGetMedicamentos";
 import "../../styles/Medicamentos.css";
+import MedicamentoCard from "../ui/medicamento-card";
 
 const Medicamentos = () => {
-  const [medicamentos, setMedicamentos] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const {result, loading, error} = useGetMedicamentos()
 
   return (
     <div className="medicamentos-container">
@@ -17,27 +16,20 @@ const Medicamentos = () => {
           {error && <p className="error-message">{error}</p>}
 
           <div className="medicamentos-list">
-            {medicamentos.map((medicamento) => (
-              <div className="medicamento-card" key={medicamento.id}>
-                <img
-                  className="medicamento-imagen"
-                  src={medicamento.imagen_url}
-                  alt={medicamento.nombre}
+            {!loading &&
+              Array.isArray(result) &&
+              result.map((medicamento) => (
+                <MedicamentoCard
+                  nombre={medicamento.nombre}
+                  descripcion={medicamento.descripcion}
+                  cantidad={medicamento.cantidad}
+                  fecha_vencimiento={medicamento.fecha_vencimiento}
+                  img_url={medicamento.imagen_url}
+                  key={medicamento.id}
                 />
-                <h3>{medicamento.nombre}</h3>
-                <p>
-                  <strong>Descripción:</strong> {medicamento.descripcion}
-                </p>
-                <p>
-                  <strong>Vencimiento:</strong>{" "}
-                  {new Date(medicamento.fecha_vencimiento).toLocaleDateString()}
-                </p>
-                <p>
-                  <strong>Cantidad:</strong> {medicamento.cantidad}
-                </p>
-              </div>
-            ))}
+              ))}
           </div>
+
         </div>
       </div>
     </div>
